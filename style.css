@@ -6,6 +6,7 @@
     - Medium Gray: hsl(0, 0%, 41%) 
     - Almost Black: hsl(0, 0%, 8%)
     */
+    --almost_white: hsl(0, 0%, 98%);
     --medium-gray: hsl(0, 0%, 41%);
     --almost-black: hsl(0, 0%, 8%);
 }
@@ -18,7 +19,8 @@
 }
 
 body {
-    background-color: #e3e1e1;
+    /* background-color: #e3e1e1; */
+    background-color: var(--almost_white);
 }
 
 /* Desktop view */
