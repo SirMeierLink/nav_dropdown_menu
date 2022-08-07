@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+    /* 
+    - Almost White: hsl(0, 0%, 98%) 
+    - Medium Gray: hsl(0, 0%, 41%) 
+    - Almost Black: hsl(0, 0%, 8%)
+    */
+    --medium-gray: hsl(0, 0%, 41%);
+    --almost-black: hsl(0, 0%, 8%);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #e3e1e1;
+}
+
+/* Desktop view */
+nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 30px;
+    position: relative;
+    /* background-color: tomato; */
+}
+
+/* 
+    Hiding the mobile menu 
+    until the break point
+*/
+
+.mobile-hide-submenu {
+    display: none;
+}
+
+img[alt="menu-icon"],
+img[alt="menu close button"] {
+    cursor: pointer;
+}
+
+/* 
+    Hiding the mobile menu 
+    until the break point
+*/
+
+nav ul {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+img[alt=logo] {
+    margin-right: 70px;
+}
+
+.arrow {
+    transition: 0.5s ease;
+}
+
+.arrow-rotate {
+    transform: rotate(180deg);
+}
+
+nav ul li {
+    list-style: none;
+    margin-right: 40px;
+}
+
+nav li:nth-of-type(4) {
+    flex: 2;
+}
+
+nav li:last-child:not(.submenu li) {
+    /* .login is replaced by nav */
+    border: 2px solid #000;
+    padding: 10px 30px;
+    border-radius: 8px;
+    margin-right: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--medium-gray);
+}
+
+a:hover {
+    color: #000;
+}
+
+/* Styling submenus */
+.features,
+.company {
+    position: relative;
+    cursor: pointer;
+}
+
+.submenu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 20px;
+    width: 150px;
+    top: 35px;
+    left: -75px;
+    opacity: 1;
+}
+
+.company .submenu {
+    left: 0;
+    width: 120px;
+}
+
+.submenu li img {
+    margin-right: 10px;
+}
+
+.submenu li:not(li:last-child) {
+    margin: 0 0 20px;
+}
+
+.submenu li:last-child {
+    margin-right: 0;
+}
+
+/* End of styling submenus */
+
+/* Toggle submenus & buttons with JavaScript */
+.hide-submenu {
+    display: none;
+}
+
+/* End of Toggle submenus & buttons with JavaScript */
+
+/* section {
+    padding: 200px 150px;
+} */
+
+section {
+    display: flex;
+    /* background-color: pink; */
+    height: 100vh;
+}
+
+article.text {
+    width: 50%;
+    padding: 140px 0;
+    padding-left: 150px;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+article.text h1 {
+    font-size: 5rem;
+    /* background-color: tomato; */
+    padding-right: 130px;
+    width: 600px;
+    margin-bottom: 20px;
+}
+
+article.text p {
+    /* background-color: tomato; */
+    padding-right: 100px;
+    width: 500px;
+    margin-bottom: 40px;
+    font-size: 1.2rem;
+    color: var(--medium-gray);
+}
+
+/* Section - Button styling */
+button {
+    border: none;
+    outline: none;
+    color: #fff;
+    background-color: #000;
+    border-radius: 12px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: 500;
+    margin-bottom: 100px;
+    width: 165px;
+}
+
+button:hover {
+    color: #000;
+    background-color: transparent;
+    outline: 2px solid #000;
+}
+
+/* End of Section - Button styling */
+
+/* Section - Clients */
+/* --Start of Testing-- */
+.clients {
+    /* background-color: tomato; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* -- End of Testing-- */
+
+.clients img {
+    margin-right: 25px;
+    width: 70px;
+}
+
+/* End of Section - Clients */
+
+/* Section - Image banner */
+article.image {
+    width: 50%;
+    height: 100%;
+    /* background-color: tomato; */
+}
+
+article.image img {
+    width: 100%;
+    height: 80%;
+    object-fit: contain;
+}
+
+/* End of Section - Image banner */
+
+/* End of desktop view */
+
+/* Mobile view */
+@media(max-width: 1126px) {
+    section {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    article.text {
+        width: 100%;
+        padding: 50px 0;
+        align-items: center;
+    }
+
+    article.text h1 {
+        font-size: 2.5rem;
+        padding: 10px;
+        width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    article.text p {
+        /* background-color: tomato; */
+        padding: 10px;
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    button {
+        margin-bottom: 40px;
+    }
+
+    .clients {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .clients img {
+        margin-right: 0;
+    }
+
+}
+
+@media(max-width: 832px) {
+
+    article.image {
+        width: 100%;
+    }
+
+    nav {
+        justify-content: space-between;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 20px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 250px;
+        height: 100vh;
+        background-color: #fff;
+        display: none;
+    }
+
+    nav ul.show-mobile-menu {
+        display: block;
+    }
+
+    ul li {
+        margin-bottom: 20px;
+    }
+
+    .submenu {
+        justify-content: space-between;
+        position: relative;
+        top: 18px;
+        left: 0;
+        height: 160px;
+        box-shadow: none;
+        background-color: transparent;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .company .submenu:last-child {
+        justify-content: flex-start;
+        top: 20px;
+        height: 120px;
+    }
+
+    .features {
+        margin-top: 50px;
+    }
+
+    nav li:nth-of-type(4) {
+        flex: 0;
+    }
+
+    nav li:nth-of-type(5) {
+        margin-top: 25px;
+        align-self: center;
+        text-align: center;
+    }
+
+    nav li:nth-of-type(6) {
+        align-self: center;
+        width: 80%;
+        text-align: center;
+    }
+
+    /* Displaying the mobile menu */
+    img[alt="menu-icon"].mobile-hide-submenu {
+        display: inline;
+        z-index: 1;
+    }
+
+    img[alt="menu close button"] {
+        z-index: 1;
+    }
+
+    .hide-menu {
+        display: none;
+    }
+
+    /* Displaying the mobile menu */
+
+}
